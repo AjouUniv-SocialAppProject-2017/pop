@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/project_img"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pj_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Place Of Passion"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/uni_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아주대학교"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/major"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="미디어학과"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/member1"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="김규서 황선욱"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/summary_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="POP은 대학생들의 졸업작품을 모아볼 수 있는 어플입니다." />
+
+        <LinearLayout
+            android:id="@+id/tech_layout"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"></LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/numbers_of_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="31명"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:layout_marginTop="3dp"/>
+
+            <ImageButton
+                android:id="@+id/like_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/heart_off"
+                android:gravity="center|right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
