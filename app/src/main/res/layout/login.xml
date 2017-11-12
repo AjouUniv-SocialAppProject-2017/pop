@@ -21,13 +21,25 @@
         android:layout_marginTop="54dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="115dp"
+        android:layout_alignStart="@+id/loginpw"
+        android:layout_marginBottom="112dp"
+        android:layout_marginStart="13dp"
+        android:onClick="mOnClick"
         android:text="로그인" />
+
+    <Button
+        android:id="@+id/join_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:layout_alignBaseline="@+id/login_button"
+        android:layout_alignBottom="@+id/login_button"
+        android:onClick="mOnClick"
+        android:layout_alignEnd="@+id/loginpw" />
 
     <EditText
         android:id="@+id/loginid"
@@ -39,10 +51,8 @@
         android:textColorHint="#ffffff"
         android:textCursorDrawable="@null"
         android:textColor="#ffffff"
-        android:layout_above="@+id/loginpw"
-        android:layout_alignStart="@+id/loginpw"
-        android:layout_marginBottom="54dp"
-        />
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/join_button" />
 
     <EditText
         android:id="@+id/loginpw"
@@ -54,10 +64,8 @@
         android:textColorHint="#ffffff"
         android:textCursorDrawable="@null"
         android:textColor="#ffffff"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="85dp"
-        />
+        android:layout_below="@+id/loginid"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

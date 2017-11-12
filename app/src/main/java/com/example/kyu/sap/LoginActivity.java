@@ -23,21 +23,23 @@ public class LoginActivity extends AppCompatActivity {
         EditText content = new EditText(this);
         content.setGravity(Gravity.RIGHT);
 
-        final Button button = (Button) findViewById(R.id.button); //로그인 성공 후 메인화면
         final EditText edit_id = (EditText) findViewById(R.id.loginid);
         final EditText edit_pw = (EditText) findViewById(R.id.loginpw);
 
         edit_id.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
         edit_pw.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
-        View.OnClickListener listener1 = new View.OnClickListener() { //로그인 성공 후 메인화면
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            }
+    }
 
-        };
-        button.setOnClickListener(listener1);
+    public void mOnClick(View v) {
+
+        switch(v.getId()){
+            case R.id.login_button:
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                break;
+            case R.id.join_button:
+                startActivity(new Intent(LoginActivity.this, JoinActivity.class));
+                break;
+        }
     }
 }
 

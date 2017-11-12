@@ -14,13 +14,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static android.R.id.edit;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.kyu.sap.MainActivity.search;
+import static com.example.kyu.sap.R.id.editText;
+import static com.example.kyu.sap.R.id.uni_txt;
 
 /**
  * Created by Kyu on 2017-11-07.
@@ -36,9 +44,11 @@ public class TimeLineFragment extends Fragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //ImageView imageView = (ImageView) getView().findViewById(R.id.foo);
+
         item_list.clear();
 
-        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.team1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217));
+        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.cat1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217));
         item_list.get(0).addMember("김규서");
         item_list.get(0).addMember("황선욱");
         item_list.get(0).addMember("홍길동");
@@ -47,8 +57,8 @@ public class TimeLineFragment extends Fragment{
         item_list.get(0).addTech("#안드로이드");
 
 
-        item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.team2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",false,141));
-        item_list.get(1).addMember("박혜렴");
+        item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.cat2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",false,141));
+        item_list.get(1).addMember("박혜린");
         item_list.get(1).addMember("신동호");
         item_list.get(1).addMember("김현석");
         item_list.get(1).addTech("#안드로이드");
@@ -155,6 +165,10 @@ public class TimeLineFragment extends Fragment{
         list.setTextFilterEnabled(true);
 
 
+        View v = inflater.inflate(R.layout.activity_main, container, false);
+
+        //EditText search2 = (EditText) v.findViewById(R.id.editText);
+
 
         watcher = new watch(Adapter);
         watcher.start();
@@ -162,8 +176,8 @@ public class TimeLineFragment extends Fragment{
         mhandler = new Handler(){
             public void handleMessage(Message msg) {
                 if(msg.what ==0) {
-                    Log.e(this.getClass().getName(),"WHAT : 0 "+MainActivity.search);
-                    Adapter.filter(MainActivity.search);
+                    Log.e(this.getClass().getName(),"WHAT : 0 "+ search);
+                    Adapter.filter(search);
                     Adapter.notifyDataSetChanged();
                 }
                 else if(msg.what == 2){
@@ -290,12 +304,12 @@ public class TimeLineFragment extends Fragment{
 
 
             // 학교
-            TextView uni_txt = (TextView) convertView.findViewById(R.id.uni_txt);
-            uni_txt.setText(data.getUniversity());
+            //TextView uni_txt = (TextView) convertView.findViewById(R.id.uni_txt);
+            //uni_txt.setText(data.getUniversity());
 
             // 학과
-            TextView major = (TextView) convertView.findViewById(R.id.major);
-            major.setText(data.getMajor());
+            //TextView major = (TextView) convertView.findViewById(R.id.major);
+            //major.setText(data.getMajor());
 
             // 맴버
             TextView member = (TextView) convertView.findViewById(R.id.member1);
@@ -334,6 +348,7 @@ public class TimeLineFragment extends Fragment{
                         //헤시테그
                         //MainActivity.search = tech.get(finalI).getText().toString();
                         String temp = tech.get(finalI).getText().toString();
+                        Toast.makeText(getContext(), temp, Toast.LENGTH_SHORT).show();
                         Message msg = mhandler.obtainMessage();
                         msg.what = 1;
                         msg.obj = temp;
@@ -438,9 +453,9 @@ public class TimeLineFragment extends Fragment{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if(str!=MainActivity.search){
-                    str = MainActivity.search;
-                    Log.e(this.getClass().getName(),MainActivity.search);
+                if(str!= search){
+                    str = search;
+                    Log.e(this.getClass().getName(), search);
                     mhandler.sendEmptyMessage(0);
                 }
             }

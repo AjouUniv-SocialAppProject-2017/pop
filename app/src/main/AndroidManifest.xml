@@ -23,6 +23,14 @@
         </activity>
         <activity android:name=".DetailActivity">
         </activity>
+        <activity android:name=".JoinActivity">
+        </activity>
+        <activity android:name=".RegProjectActivity">
+        </activity>
+        <activity android:name=".UseRule">
+        </activity>
+        <activity android:name=".PersonRule">
+        </activity>
     </application>
 
 </manifest>

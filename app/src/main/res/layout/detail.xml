@@ -6,6 +6,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -111,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:text="doldam.pdf"
+                    android:text="pop.pdf"
                     android:textColor="#515151"
                     android:textSize="18sp" />
 
@@ -139,9 +143,8 @@
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textColor="#515151"
-                    android:text="doldam.avi"
+                    android:text="pop.avi"
                     android:layout_marginBottom="10dp"/>
-
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +169,7 @@
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textColor="#515151"
-                    android:text="2017년도 6월"
+                    android:text="2017년도 11월"
                     android:layout_marginBottom="10dp"/>
 
             </LinearLayout>
@@ -192,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:text="주완빈, 안진모, 한단비"
+                    android:text="김규서, 황선욱"
                     android:textColor="#515151"
                     android:textSize="18sp" />
 

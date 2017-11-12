@@ -1,5 +1,6 @@
 package com.example.kyu.sap;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -8,11 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class MainActivity extends AppCompatActivity {
 
-    static public String search="";
+    static public String search = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-
         final EditText edittext = (EditText)findViewById(R.id.editText);
         edittext.addTextChangedListener(new TextWatcher() {
             @Override
@@ -78,4 +82,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void mOnClick(View v){
+        switch(v.getId()){
+            case R.id.add_project:
+                Intent intent = new Intent(this, RegProjectActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.p_logo:
+                Intent intent2 = new Intent(this, UseRule.class);
+                startActivity(intent2);
+                break;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
