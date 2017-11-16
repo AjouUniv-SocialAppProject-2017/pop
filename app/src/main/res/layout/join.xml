@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:text="비밀번호 힌트를 입력해 주세요"
+                    android:text="영문+숫자로 입력해 주세요"
                     android:textColor="#7b828b"
                     android:textSize="10sp"
                     android:background="@drawable/img_infobg"/>
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:text="영문대소문자 + 숫자로 입력해 주세요."
+                    android:text="영문+숫자로 입력해 주세요"
                     android:textColor="#7b828b"
                     android:textSize="10sp"
                     android:background="@drawable/img_infobg"/>
@@ -235,7 +235,101 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:text="아이디/비밀번호 찾기에 필요합니다.실제 사용하시는 메일주소를 입력하세요."
+                    android:text="실제 사용하시는 메일주소를 입력하세요."
+                    android:textColor="#7b828b"
+                    android:textSize="10sp"
+                    android:background="@drawable/img_infobg"/>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#d3dce5"/>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="27.5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="73.5dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#7b828b"
+                        android:textSize="11sp"
+                        android:text="핸드폰 번호" />
+
+                    <EditText
+                        android:id="@+id/phone_num"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.1"
+                        android:paddingLeft="5dp"
+                        android:background="@drawable/backwithborder"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="#373737"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="실제 사용하시는 핸드폰 번호를 입력하세요."
+                    android:textColor="#7b828b"
+                    android:textSize="10sp"
+                    android:background="@drawable/img_infobg"/>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#d3dce5"/>
+
+                <!-- 학과 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="27.5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="73.5dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#7b828b"
+                        android:textSize="11sp"
+                        android:text="학과" />
+
+                    <EditText
+                        android:id="@+id/major"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.1"
+                        android:paddingLeft="5dp"
+                        android:background="@drawable/backwithborder"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="#373737"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="자신의 학과를 입력해 주세요."
                     android:textColor="#7b828b"
                     android:textSize="10sp"
                     android:background="@drawable/img_infobg"/>

@@ -9,7 +9,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
-        android:background="#74bfc8"/>
+        android:background="#000000"/>
 
     <ImageView
         android:id="@+id/reg_roomImage"
@@ -23,7 +23,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
-        android:background="#74bfc8"/>
+        android:background="#000000"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -33,6 +33,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="50dp"
+            android:gravity="center_horizontal"
             android:background="#000000"
             android:orientation="horizontal">
 
@@ -40,7 +41,6 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="135dp"
                 android:text="프로젝트 등록"
                 android:textColor="#FFFFFF"
                 android:textSize="35dp" />
@@ -168,7 +168,7 @@
                             android:id="@+id/textCategory"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="전세/월세/매매"
+                            android:text="학과"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -207,7 +207,7 @@
                             android:id="@+id/textDealType"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="거래타입"
+                            android:text="구성원"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -246,7 +246,7 @@
                             android:id="@+id/textPrice"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="거래금액"
+                            android:text="요약"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -285,7 +285,7 @@
                             android:id="@+id/textSize"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="면적"
+                            android:text="해시태그"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -324,7 +324,7 @@
                             android:id="@+id/textFloorNum"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="해당층/건물층"
+                            android:text="날짜"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -362,7 +362,7 @@
                             android:id="@+id/textRoomNum"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="방 개수"
+                            android:text="발표 자료"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -401,7 +401,7 @@
                             android:id="@+id/textInputDate"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="입주 가능일"
+                            android:text="시연 영상(링크)"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
@@ -440,7 +440,7 @@
                             android:id="@+id/textSummary"
                             android:layout_width="73.5dp"
                             android:layout_height="wrap_content"
-                            android:text="한줄 요약"
+                            android:text="연락 가능 번호"
                             android:textColor="#7b828b"
                             android:textSize="11sp" />
 
