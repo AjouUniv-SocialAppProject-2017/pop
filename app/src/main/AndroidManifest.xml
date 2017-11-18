@@ -31,6 +31,10 @@
         </activity>
         <activity android:name=".PersonRule">
         </activity>
+        <activity android:name=".SplashActivity">
+        </activity>
+
+
     </application>
 
 </manifest>

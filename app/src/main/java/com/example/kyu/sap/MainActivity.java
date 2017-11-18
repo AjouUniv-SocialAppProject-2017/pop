@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
         adapter.addFragment(new TimeLineFragment(), null);
-        adapter.addFragment(new MyFragment(), null);
+        adapter.addFragment(new LikeFragment(), null);
         adapter.addFragment(new MyFragment(), null);
         adapter.addFragment(new ProfileFragment(), null);
 

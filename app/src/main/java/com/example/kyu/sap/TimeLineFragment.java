@@ -57,7 +57,7 @@ public class TimeLineFragment extends Fragment{
         item_list.get(0).addTech("#안드로이드");
 
 
-        item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.cat2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",false,141));
+        item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.cat2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",true,141));
         item_list.get(1).addMember("박혜린");
         item_list.get(1).addMember("신동호");
         item_list.get(1).addMember("김현석");
@@ -196,8 +196,8 @@ public class TimeLineFragment extends Fragment{
     public class myAdapter extends BaseAdapter{
         Context con;
         LayoutInflater inflater;
-        ArrayList<Data> components_list;
-        ArrayList<Data> searched_list;
+        ArrayList<Data> components_list; //
+        ArrayList<Data> searched_list; //
         int layout;
         myAdapter(Context context, int layout, ArrayList<Data> components_list) {
             con = context;
@@ -285,7 +285,6 @@ public class TimeLineFragment extends Fragment{
                     if (data.isLike()) {
                         like_btn.setBackground(ContextCompat.getDrawable(finalConvertView.getContext(), R.drawable.heart_on));
                         data.setNumber_of_like(data.getNumber_of_like()+1);
-
                     } else {
                         like_btn.setBackground(ContextCompat.getDrawable(finalConvertView.getContext(), R.drawable.heart_off));
                         data.setNumber_of_like(data.getNumber_of_like()-1);
@@ -359,6 +358,7 @@ public class TimeLineFragment extends Fragment{
 
             return convertView;
         }
+
 
         public void filter(String search) {
             Log.e(this.getClass().getName(),"filter start");
