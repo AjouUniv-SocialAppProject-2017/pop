@@ -204,6 +204,7 @@ public class TimeLineFragment extends Fragment{
             this.layout = layout;
             this.components_list = components_list;
             searched_list = new ArrayList<>();
+            //components_list = searched_list
             for(int i=0;i<components_list.size();i++){
                 searched_list.add(components_list.get(i));
             }
