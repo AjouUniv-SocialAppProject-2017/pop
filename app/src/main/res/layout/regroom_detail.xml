@@ -1,0 +1,533 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    >
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
+        android:background="#000000"/>
+
+    <ImageView
+        android:id="@+id/reg_roomImage"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:onClick="mOnClick"
+        />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
+        android:background="#000000"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <!-- 방 정보 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_horizontal"
+            android:background="#000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="프로젝트 등록"
+                android:textColor="#FFFFFF"
+                android:textSize="35dp" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroll">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ecf0f1"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:paddingLeft="15.5dp"
+                android:paddingRight="15.5dp"
+                android:paddingTop="8dp" >
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="17dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/img_contentsbg">
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textTitle"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="프로젝트 이름"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_title"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textAddress"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="학교"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_address"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textCategory"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="학과"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_category"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textDealType"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="구성원"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_dealType"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textPrice"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="요약"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_price"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textSize"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="해시태그"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_size"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textFloorNum"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="날짜"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_floorNum"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textRoomNum"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="발표 자료"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_roomNum"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textInputDate"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="시연 영상(링크)"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_inputDate"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- 제목 -->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textSummary"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="연락 가능 번호"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_summary"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+
+                    <!-- ////-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="27.5dp"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textPhoneCall"
+                            android:layout_width="73.5dp"
+                            android:layout_height="wrap_content"
+                            android:text="연락 가능 번호"
+                            android:textColor="#7b828b"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/reg_phoneCall"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.1"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/backwithborder"
+                            android:gravity="center_vertical"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textColor="#373737"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="#d3dce5"/>
+
+                    <!-- //-->
+
+                    <!--등록버튼-->
+                    <Button
+                        android:id="@+id/btn_register"
+                        android:layout_width="fill_parent"
+                        android:layout_height="41dp"
+                        android:background="@drawable/btn_blue_selector"
+                        android:gravity="center"
+                        android:text="등록 하기"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp"
+                        android:onClick="mOnClick"/>
+
+                    <!--버튼영역까지 확보를 위한 리니어-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

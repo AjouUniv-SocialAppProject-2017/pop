@@ -6,6 +6,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -23,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/border_bottom">
+            android:background="@drawable/border_bottom"
+            android:weightSum="1">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
@@ -53,9 +58,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="130dp"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_weight="3.50">
 
                 <TextView
                     android:layout_marginRight="10dp"
@@ -87,7 +93,34 @@
                     android:layout_gravity="right"
                     android:textSize="18sp"
                     android:textColor="#515151"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="채팅방 입장하기"
+                        android:textSize="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/chatButton" />
+
+                    <ImageView
+                        android:onClick="chatOnClick"
+                        android:id="@+id/chatButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="right"
+                        android:src="@drawable/chaticon"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+
+
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:text="doldam.pdf"
+                    android:text="pop.pdf"
                     android:textColor="#515151"
                     android:textSize="18sp" />
 
@@ -139,9 +172,8 @@
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textColor="#515151"
-                    android:text="doldam.avi"
+                    android:text="pop.avi"
                     android:layout_marginBottom="10dp"/>
-
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +198,7 @@
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textColor="#515151"
-                    android:text="2017년도 6월"
+                    android:text="2017년도 11월"
                     android:layout_marginBottom="10dp"/>
 
             </LinearLayout>
@@ -192,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:text="주완빈, 안진모, 한단비"
+                    android:text="김규서, 황선욱"
                     android:textColor="#515151"
                     android:textSize="18sp" />
 
@@ -223,7 +255,79 @@
                     android:textColor="#515151"
                     android:textSize="18sp" />
 
+
             </LinearLayout>
+<!--댓글달기-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_top">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textSize="18sp"
+                    android:textColor="#ADADAD"
+                    android:text="댓글"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="Comment List"
+                    android:textColor="#515151"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+
+
+
+            <ListView
+                android:id="@+id/comment_list"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="60dp"
+                android:layout_above="@+id/layout"/>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_marginTop="-60dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_comment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#ff000000"
+                    android:hint="댓글을 입력하세요."/>
+
+                <ImageView
+                    android:id="@+id/btn_comment_send"
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/commenticon"
+                    android:text="댓글달기"
+                    android:src="@drawable/commenticon"/>
+
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                />
+
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

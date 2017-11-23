@@ -7,6 +7,9 @@ import java.util.ArrayList;
  */
 
 public class Data {
+
+    //팀이름(프로젝트 이름), 학교, 학과, 구성원, 요약, 해시태그, 좋아요, 썸넬, 발표자료(pdf), 시연영상(youtube)
+    //"날짜" 가 새로 등록 되어야 함
     private String pj_name;
     private String university;
     private String major;
