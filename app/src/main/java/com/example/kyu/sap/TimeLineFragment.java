@@ -64,93 +64,7 @@ public class TimeLineFragment extends Fragment{
         item_list.get(1).addTech("#안드로이드");
         item_list.get(1).addTech("#카메라");
         item_list.get(1).addTech("#시선추적모듈");
-/*
-        item_list.add(new Data("망국의 왕자","인하대학교","컴퓨터공학과","유니티 기반 턴제 SRPG",R.drawable.team2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=dgzdbicePYY",true,38));
-        item_list.get(2).addMember("이민영");
-        item_list.get(2).addMember("이명호");
-        item_list.get(2).addMember("심상형");
-        item_list.get(2).addTech("#안드로이드");
-        item_list.get(2).addTech("#유니티");
-        item_list.get(2).addTech("#SRPG");
 
-        item_list.add(new Data("인하인아","인하대학교","컴퓨터공학과","인하대학교 정보 제공 챗봇 서비스",R.drawable.team3,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=PRHCUOZPe28",true,91));
-        item_list.get(3).addMember("윤희수");
-        item_list.get(3).addMember("양희정");
-        item_list.get(3).addTech("#안드로이드");
-        item_list.get(3).addTech("#챗봇");
-        item_list.get(3).addTech("#크롤링");
-
-        item_list.add(new Data("Triple Core","인하대학교","컴퓨터공학과","Interior Helper",R.drawable.team4,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=Rg8cqKhb7B0",true,114));
-        item_list.get(4).addMember("김형석");
-        item_list.get(4).addMember("원정아");
-        item_list.get(4).addMember("김민지");
-        item_list.get(4).addTech("#안드로이드");
-        item_list.get(4).addTech("#카메라");
-
-        item_list.add(new Data("RETRO","인하대학교","컴퓨터공학과","Deep-Learning을 이용한 게임 플레이",R.drawable.team5,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=mxMNkPV5TUQ",false,13));
-        item_list.get(5).addMember("심재형");
-        item_list.get(5).addMember("임재언");
-        item_list.get(5).addMember("원상운");
-        item_list.get(5).addTech("#안드로이드");
-        item_list.get(5).addTech("#Deep_Learning");
-        item_list.get(5).addTech("#인공지능");
-
-        item_list.add(new Data("GEUS","인하대학교","컴퓨터공학과","고지서 나오기 전 예상금액 산출",R.drawable.team6,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=KzJN2fwiTbg",false,62));
-        item_list.get(6).addMember("김다빈");
-        item_list.get(6).addMember("김영현");
-        item_list.get(6).addMember("손예별");
-        item_list.get(6).addTech("#안드로이드");
-        item_list.get(6).addTech("#카메라");
-        item_list.get(6).addTech("#숫자인식");
-
-        item_list.add(new Data("상담 신청이 제일 쉬웠어요","인하대학교","컴퓨터공학과","상담 커뮤니케이션 어플리케이션",R.drawable.team7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=VWuXOqh8dgw",true,70));
-        item_list.get(7).addMember("권철건");
-        item_list.get(7).addMember("하준혁");
-        item_list.get(7).addMember("땅항렝");
-        item_list.get(7).addTech("#안드로이드");
-        item_list.get(7).addTech("#서버");
-        item_list.get(7).addTech("#데이터베이스");
-
-        item_list.add(new Data("Stepic","인하대학교","컴퓨터공학과","공간 중심의 사진 SNS",R.drawable.team8,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=tMQaIFGt780",true,238));
-        item_list.get(8).addMember("한단비");
-        item_list.get(8).addMember("손은겸");
-        item_list.get(8).addMember("장지은");
-        item_list.get(8).addTech("#안드로이드");
-        item_list.get(8).addTech("#카메라");
-        item_list.get(8).addTech("#SNS");
-
-        item_list.add(new Data("강추","인하대학교","컴퓨터공학과","강의 추천 기반 시간표 사이트",R.drawable.team9,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=NfAYpNKgrYk",false,11));
-        item_list.get(9).addMember("이강호");
-        item_list.get(9).addMember("한정");
-        item_list.get(9).addTech("#안드로이드");
-        item_list.get(9).addTech("#웹");
-        item_list.get(9).addTech("#데이터베이스");
-
-        item_list.add(new Data("HOBBIT","인하대학교","컴퓨터공학과","NFC를 이용한 스마트콘센트",R.drawable.team10,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=SoGgBVaIaHU",true,82));
-        item_list.get(10).addMember("이태규");
-        item_list.get(10).addMember("정헌휘");
-        item_list.get(10).addMember("김건희");
-        item_list.get(10).addTech("#NFC");
-        item_list.get(10).addTech("#아두이노");
-        item_list.get(10).addTech("#안드로이드");
-
-
-        item_list.add(new Data("CRIS","인하대학교","컴퓨터공학과","재난 대응 시뮬레이션 게임",R.drawable.team11,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=Kq1ceekG1DM",true,231));
-        item_list.get(11).addMember("유승재");
-        item_list.get(11).addMember("김승환");
-        item_list.get(11).addTech("#안드로이드");
-        item_list.get(11).addTech("#VR");
-        item_list.get(11).addTech("#블루투스");
-
-
-        item_list.add(new Data("Comento","인하대학교","컴퓨터공학과","피부 분석 화장품 추천 어플리케이션",R.drawable.team12,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=BhmQU2kgeos",false,7));
-        item_list.get(12).addMember("백승환");
-        item_list.get(12).addMember("이진아");
-        item_list.get(12).addMember("윤찬미");
-        item_list.get(12).addTech("#안드로이드");
-        item_list.get(12).addTech("#카메라");
-        item_list.get(12).addTech("#얼굴인식");
-*/
     }
 
     @Override
@@ -204,7 +118,9 @@ public class TimeLineFragment extends Fragment{
             this.layout = layout;
             this.components_list = components_list;
             searched_list = new ArrayList<>();
-            //components_list = searched_list
+
+            //?????????????????????적으면xx
+            //components_list = searched_list;
             for(int i=0;i<components_list.size();i++){
                 searched_list.add(components_list.get(i));
             }

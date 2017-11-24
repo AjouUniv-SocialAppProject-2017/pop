@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "52763228055",
-    "firebase_url": "https://saporect-1ed75.firebaseio.com",
-    "project_id": "saporect-1ed75",
-    "storage_bucket": "saporect-1ed75.appspot.com"
+    "project_number": "40839752719",
+    "firebase_url": "https://popsocialappproject.firebaseio.com",
+    "project_id": "popsocialappproject",
+    "storage_bucket": "popsocialappproject.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:52763228055:android:7b53fb68da107191",
+        "mobilesdk_app_id": "1:40839752719:android:7b53fb68da107191",
         "android_client_info": {
           "package_name": "com.example.kyu.sap"
         }
       },
       "oauth_client": [
         {
-          "client_id": "52763228055-escr232cn4le86oao5sad9kci38aast5.apps.googleusercontent.com",
+          "client_id": "40839752719-nbacj9lkuumju6bejvdm85v31ul6pjsk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5CP0i1y_96ENdm1Q6xH0tFaly3VaWFBk"
+          "current_key": "AIzaSyDv3KA2Fqfq_065OBAMRHIuGwwJ_b4X6Tk"
         }
       ],
       "services": {
