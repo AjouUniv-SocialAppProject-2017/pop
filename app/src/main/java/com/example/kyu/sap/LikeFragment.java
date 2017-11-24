@@ -34,11 +34,11 @@ public class LikeFragment extends Fragment{
 
 
 
-<<<<<<< HEAD
+
         final myAdapter Adapter = new myAdapter(view.getContext(), R.layout.image_item, item_list);
-=======
+
         final LikeFragment.myAdapter Adapter = new LikeFragment.myAdapter(view.getContext(), R.layout.image_item, item_list);
->>>>>>> origin/master
+
         GridView list = (GridView) view.findViewById(R.id.Grid_image);
 
         list.setAdapter(Adapter);
@@ -129,11 +129,11 @@ public class LikeFragment extends Fragment{
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-<<<<<<< HEAD
+
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
-=======
+
                     Intent intent = new Intent(getActivity(), com.example.kyu.sap.DetailActivity.class);
->>>>>>> origin/master
+
                     intent.putExtra("project_img", data.getImg());
                     intent.putExtra("like_btn", data.isLike());
                     intent.putExtra("pj_name", data.getPj_name());
