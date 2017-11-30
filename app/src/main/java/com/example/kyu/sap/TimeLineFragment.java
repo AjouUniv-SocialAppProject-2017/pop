@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -22,13 +23,32 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import static android.R.id.edit;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.kyu.sap.JoinActivity.UserRef;
+import static com.example.kyu.sap.JoinActivity.ds;
 import static com.example.kyu.sap.MainActivity.search;
 import static com.example.kyu.sap.R.id.editText;
+import static com.example.kyu.sap.R.id.et_join_email;
+import static com.example.kyu.sap.R.id.et_join_id;
+import static com.example.kyu.sap.R.id.et_join_major;
+import static com.example.kyu.sap.R.id.et_join_name;
+import static com.example.kyu.sap.R.id.et_join_phone_num;
+import static com.example.kyu.sap.R.id.et_join_pw;
+import static com.example.kyu.sap.R.id.pj_name;
 import static com.example.kyu.sap.R.id.uni_txt;
+import static com.example.kyu.sap.RegProjectActivity.ds2;
 
 /**
  * Created by Kyu on 2017-11-07.
@@ -38,24 +58,33 @@ public class TimeLineFragment extends Fragment{
 
     watch watcher;
     Handler mhandler;
-    static ArrayList<Data> item_list = new ArrayList<>();
+    public static ArrayList<Data> item_list = new ArrayList<>();
+
+    public static myAdapter Adapter;
+
+    //추가
+    public static DatabaseReference DataRef = FirebaseDatabase.getInstance().getReference().child("data");
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //ImageView imageView = (ImageView) getView().findViewById(R.id.foo);
+        Log.d("onCreate" , "onCreate");
+        Log.d("onCreate" , "onCreate");
+        Log.d("onCreate" , "onCreate");
 
         item_list.clear();
 
-        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.cat1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217));
+
+        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.cat1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/ajouuniversity",true,217));
         item_list.get(0).addMember("김규서");
         item_list.get(0).addMember("황선욱");
         item_list.get(0).addMember("홍길동");
         item_list.get(0).addTech("#리스트뷰");
         item_list.get(0).addTech("#뷰페이저");
         item_list.get(0).addTech("#안드로이드");
-
 
         item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.cat2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",true,141));
         item_list.get(1).addMember("박혜린");
@@ -64,7 +93,26 @@ public class TimeLineFragment extends Fragment{
         item_list.get(1).addTech("#안드로이드");
         item_list.get(1).addTech("#카메라");
         item_list.get(1).addTech("#시선추적모듈");
+    }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d("onStart" , "onStart");
+        Log.d("onStart" , "onStart");
+        Log.d("onStart" , "onStart");
+
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("onResume" , "onResume");
+        Log.d("onResume" , "onResume");
+        Log.d("onResume" , "onResume");
+        Adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -72,11 +120,17 @@ public class TimeLineFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_blank, null);
 
 
-        final myAdapter Adapter = new myAdapter(view.getContext(), R.layout.item, item_list);
+        Log.d("onCreateView" , "onCreateView");
+        Log.d("onCreateView" , "onCreateView");
+        Log.d("onCreateView" , "onCreateView");
+
+        //final myAdapter
+        Adapter = new myAdapter(view.getContext(), R.layout.item, item_list);
         ListView list = (ListView)view.findViewById(R.id.lst_work);
 
         list.setAdapter(Adapter);
         list.setTextFilterEnabled(true);
+
 
 
         View v = inflater.inflate(R.layout.activity_main, container, false);

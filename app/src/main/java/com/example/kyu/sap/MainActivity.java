@@ -9,15 +9,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.kyu.sap.TimeLineFragment.Adapter;
+import static com.example.kyu.sap.TimeLineFragment.item_list;
 
 public class MainActivity extends AppCompatActivity {
 
     static public String search = "";
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("main_Resume", "main_Resume");
+        Log.d("main_Resume", "main_Resume");
+        Log.d("main_Resume", "main_Resume");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 search = edittext.getText().toString();
             }
         });
+
+
 
     }
 

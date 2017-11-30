@@ -94,6 +94,15 @@ public class User {
     }
 
     private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private String user_name;
     private String team_name;
     private String email;

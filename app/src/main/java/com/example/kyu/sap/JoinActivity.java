@@ -44,7 +44,7 @@ public class JoinActivity extends AppCompatActivity {
     private CheckBox cb_join_clause;
     private CheckBox cb_join_personal;
 
-    private DataSnapshot ds;
+    public static DataSnapshot ds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
