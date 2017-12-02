@@ -1,4 +1,4 @@
-package com.example.samsung.chat;
+package com.example.kyu.sap;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
@@ -94,6 +94,15 @@ public class User {
     }
 
     private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private String user_name;
     private String team_name;
     private String email;

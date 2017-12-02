@@ -84,9 +84,9 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
 
-                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
 
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
 
@@ -104,9 +104,9 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
 
-                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
 
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
             }

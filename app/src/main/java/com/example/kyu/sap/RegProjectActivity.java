@@ -1,24 +1,42 @@
 package com.example.kyu.sap;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+
+import static android.support.v7.widget.AppCompatDrawableManager.get;
+import static com.example.kyu.sap.ProfileFragment.getRoundedCornerBitmap;
+import static com.example.kyu.sap.TimeLineFragment.DataRef;
+import static com.example.kyu.sap.TimeLineFragment.item_list;
 
 /**
  * Created by Kyu on 2017-05-14.
@@ -28,6 +46,7 @@ public class RegProjectActivity extends AppCompatActivity {
 
     private static final int PICK_FROM_CAMERA = 1;
     private static final int PICK_FROM_GALLERY = 2;
+    public static DataSnapshot ds2;
     private ImageView reg_roomImage;
 
     private EditText reg_title;
@@ -58,36 +77,97 @@ public class RegProjectActivity extends AppCompatActivity {
 
 //        intent = getIntent();
 
+        //리스너
+
+        //회원가입을 할때마다 사용자들의 아이디를 setid에 누적
+        ValueEventListener DataListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+
+                ds2 = dataSnapshot;
+                Log.d("bul", "bul");
+                Log.d("bul", "bul");
+                Log.d("bul", "bul");
+                //리스트뷰 업데이트
+                //arr_user_id_list.clear();
+                //arr_user_id_list.addAll(setid);
+                //arrayAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+            }
+        };
+        DataRef.addValueEventListener(DataListener);
+    }
+
+    private void registerProject() {
+
+        String key = DataRef.push().getKey();
+
+        Data data = new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",12345,"https://drive.google.com/open?id=IMSI","https://www.youtube.com/user/ajouuniversity",true,217);
+
+        Map<String, Object> dataValues = data.toMap();
+
+        Map<String, Object> childUpdates = new HashMap<>();
+
+
+        childUpdates.put(key, dataValues);
+        DataRef.updateChildren(childUpdates);
+
+    }
+
+    //가져오기
+    private void rkwudhrl(){
+
+        //가져오는 부분
+        Iterator i = ds2.getChildren().iterator();
+
+        Data test_data = new Data();
+        String imsiPj_name = "";
+        //String imsiMajor = "";
+
+        while (i.hasNext()) {
+
+            test_data = ((DataSnapshot) i.next()).getValue(Data.class);
+
+            imsiPj_name = test_data.getPj_name();
+            //imsiMajor = test_data.getMajor();
+
+        }
+
+
+        //이부분 실시간 업데이트 해결 해야함//
+//        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.cat1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/ajouuniversity",true,217));
+//        item_list.get(2).addMember("김규서");
+//        item_list.get(2).addMember("황선욱");
+//        item_list.get(2).addMember("홍길동");
+//        item_list.get(2).addTech("#리스트뷰");
+//        item_list.get(2).addTech("#뷰페이저");
+//        item_list.get(2).addTech("#안드로이드");
+
+
+        Toast.makeText(getApplicationContext(), imsiPj_name, Toast.LENGTH_SHORT).show();
+
     }
 
     public void mOnClick(View v){
         switch(v.getId()){
             //+버튼 누르면
             case R.id.reg_roomImage:
-
-                Intent intent = new Intent();
-                // Gallery 호출
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                // 잘라내기 셋팅
-                intent.putExtra("crop", "true");
-                intent.putExtra("aspectX", 0);
-                intent.putExtra("aspectY", 0);
-                intent.putExtra("outputX", 200);
-                intent.putExtra("outputY", 150);
-                try {
-                    intent.putExtra("return-data", true);
-                    startActivityForResult(Intent.createChooser(intent,
-                            "Complete action using"), PICK_FROM_GALLERY);
-                } catch (ActivityNotFoundException e) {
-                    // Do nothing for now
-                }
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 100);
                 break;
             //완료버튼
             case R.id.btn_register:
-
+                registerProject();
                 break;
-
+            case R.id.btn_ghkrdls:
+                rkwudhrl();
+                break;
             default:
                 break;
         }
@@ -95,28 +175,30 @@ public class RegProjectActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == PICK_FROM_CAMERA) {
-            Bundle extras = data.getExtras();
-            if (extras != null) {
-                photo = extras.getParcelable("data");
-                //reg_roomImage.setImageBitmap(photo);
+        if(requestCode == 100)
+        {
+            if(resultCode== Activity.RESULT_OK)
+            {
+                try {
+                    //Uri에서 이미지 이름을 얻어온다.
+                    //String name_Str = getImageNameToUri(data.getData());
+                    //이미지 데이터를 비트맵으로 받아온다.
+                    Bitmap image_bitmap 	= MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
+                    ImageView image = (ImageView) findViewById(R.id.reg_roomImage);
+                    //배치해놓은 ImageView에 set
+                    image.setImageBitmap(image_bitmap);
+                    Toast.makeText(getApplicationContext(), "사진이 등록되었습니다.", Toast.LENGTH_SHORT).show();
+
+                } catch (FileNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
             }
-        }
-        if (requestCode == PICK_FROM_GALLERY) {
-            Bundle extras2 = data.getExtras();
-            if (extras2 != null) {
-                photo = extras2.getParcelable("data");
-                //reg_roomImage.setImageBitmap(photo);
-            }
-        }
-
-        reg_roomImage.setImageBitmap(photo);
-
-        //Drawable 객체를 받아와서
-        //temp = getDrawableFromBitmap(photo);
-
-        if(photo == null){
-            Toast.makeText(getApplicationContext(), "photo 없음", Toast.LENGTH_SHORT).show();
         }
     }
 

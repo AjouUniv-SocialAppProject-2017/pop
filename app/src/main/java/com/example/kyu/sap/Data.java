@@ -1,6 +1,10 @@
 package com.example.kyu.sap;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Kyu on 2017-11-07.
@@ -158,5 +162,23 @@ public class Data {
 
     public void setNumber_of_like(int number_of_like) {
         this.number_of_like = number_of_like;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("pj_name", pj_name);
+        result.put("university", university);
+        result.put("major", major);
+        result.put("member_list",member_list);
+        result.put("summary",summary);
+        result.put("tech_list",tech_list);
+        result.put("like",like);
+        result.put("img",img);
+        result.put("presentation",presentation);
+        result.put("video",video);
+        result.put("number_of_like",number_of_like);
+
+        return result;
     }
 }
