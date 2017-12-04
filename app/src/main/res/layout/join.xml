@@ -79,7 +79,7 @@
                         android:layout_width="88dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_gray_selector"
-                        android:text="중복 검사"
+                        android:text="아이디 중복"
                         android:textColor="#ffffff"
                         android:textSize="8dp"
                         android:onClick="mOnClick"/>
@@ -261,7 +261,7 @@
                         android:text="핸드폰 번호" />
 
                     <EditText
-                        android:id="@+id/et_join_phone_num"
+                        android:id="@+id/phone_num"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="0.1"
@@ -309,7 +309,7 @@
                         android:text="학과" />
 
                     <EditText
-                        android:id="@+id/et_join_major"
+                        android:id="@+id/major"
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
                         android:layout_weight="0.1"

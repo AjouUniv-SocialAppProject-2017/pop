@@ -521,17 +521,6 @@
                         android:textSize="15sp"
                         android:onClick="mOnClick"/>
 
-                    <Button
-                        android:id="@+id/btn_ghkrdls"
-                        android:layout_width="fill_parent"
-                        android:layout_height="41dp"
-                        android:background="@drawable/btn_blue_selector"
-                        android:gravity="center"
-                        android:text="등록 하기"
-                        android:textColor="#ffffff"
-                        android:textSize="15sp"
-                        android:onClick="mOnClick"/>
-
                     <!--버튼영역까지 확보를 위한 리니어-->
                     <LinearLayout
                         android:layout_width="match_parent"

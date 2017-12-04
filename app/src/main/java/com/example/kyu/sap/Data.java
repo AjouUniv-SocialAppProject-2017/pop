@@ -26,37 +26,8 @@ public class Data {
     private String video;
     private int number_of_like;
 
-
     Data(){
-        like = false;
-        member_list = new ArrayList<>();
-        tech_list = new ArrayList<>();
-    }
 
-    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video){
-        like = false;
-        member_list = new ArrayList<>();
-        tech_list = new ArrayList<>();
-        setPj_name(pj_name);
-        setUniversity(university);
-        setMajor(major);
-        setSummary(summary);
-        setImg(img);
-        setPresentation(presentation);
-        setVideo(video);
-    }
-
-    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like){
-        this.like = like;
-        member_list = new ArrayList<>();
-        tech_list = new ArrayList<>();
-        setPj_name(pj_name);
-        setUniversity(university);
-        setMajor(major);
-        setSummary(summary);
-        setImg(img);
-        setPresentation(presentation);
-        setVideo(video);
     }
 
     Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like){
@@ -181,4 +152,5 @@ public class Data {
 
         return result;
     }
+
 }
