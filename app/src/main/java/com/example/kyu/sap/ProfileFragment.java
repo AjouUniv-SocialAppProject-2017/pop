@@ -50,7 +50,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 ArrayList<Data> item_list = new ArrayList<>();
-                item_list.add(new Data("PoP","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.logo7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217));
+                item_list.add(new Data("PoP","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.logo7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217,"2017년 11월"));
                 item_list.get(0).addMember("김규서");
                 item_list.get(0).addMember("황선욱");
                 item_list.get(0).addMember("홍길동");

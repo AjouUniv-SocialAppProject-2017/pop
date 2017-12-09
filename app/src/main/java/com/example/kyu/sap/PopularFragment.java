@@ -24,7 +24,7 @@ public class PopularFragment extends Fragment{
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 ArrayList<Data> item_list = new ArrayList<>();
-                item_list.add(new Data("DolDam","인하대학교","컴퓨터공학과","졸업작품 정보 제공 서비스",R.drawable.logo7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217));
+                item_list.add(new Data("DolDam","인하대학교","컴퓨터공학과","졸업작품 정보 제공 서비스",R.drawable.logo7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217,"2017년 11월"));
                 item_list.get(0).addMember("안진모");
                 item_list.get(0).addMember("주완빈");
                 item_list.get(0).addMember("한단비");
@@ -56,7 +56,7 @@ public class PopularFragment extends Fragment{
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 ArrayList<Data> item_list = new ArrayList<>();
-                item_list.add(new Data("RETRO","인하대학교","컴퓨터공학과","Deep-Learning을 이용한 게임 플레이",R.drawable.team1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=mxMNkPV5TUQ",false,13));
+                item_list.add(new Data("RETRO","인하대학교","컴퓨터공학과","Deep-Learning을 이용한 게임 플레이",R.drawable.team1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=mxMNkPV5TUQ",false,13,"2017년 11월"));
                 item_list.get(0).addMember("심재형");
                 item_list.get(0).addMember("임재언");
                 item_list.get(0).addMember("원상운");
@@ -88,7 +88,7 @@ public class PopularFragment extends Fragment{
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 ArrayList<Data> item_list = new ArrayList<>();
-                item_list.add(new Data("EyeTracker","인하대학교","컴퓨터공학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.team1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",false,141));
+                item_list.add(new Data("EyeTracker","인하대학교","컴퓨터공학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스",R.drawable.team1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",false,141,"2017년 11월"));
                 item_list.get(0).addMember("박혜렴");
                 item_list.get(0).addMember("신동호");
                 item_list.get(0).addMember("김현석");

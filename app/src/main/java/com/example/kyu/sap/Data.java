@@ -19,6 +19,16 @@ public class Data {
     private String major;
     private ArrayList<String> member_list;
     private String summary;
+
+    public String getReg_date() {
+        return reg_date;
+    }
+
+    public void setReg_date(String reg_date) {
+        this.reg_date = reg_date;
+    }
+
+    private String reg_date;
     private ArrayList<String> tech_list;
     private boolean like = false;
     private int img;
@@ -30,7 +40,7 @@ public class Data {
 
     }
 
-    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like){
+    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like,String reg_date){
         this.like = like;
         member_list = new ArrayList<>();
         tech_list = new ArrayList<>();
@@ -42,21 +52,22 @@ public class Data {
         setPresentation(presentation);
         setVideo(video);
         setNumber_of_like(number_of_like);
+        setReg_date(reg_date);
     }
 
-    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like, ArrayList<String> member_list, ArrayList<String> tech_list){
-        this.like = like;
-        member_list = new ArrayList<>();
-        tech_list = new ArrayList<>();
-        setPj_name(pj_name);
-        setUniversity(university);
-        setMajor(major);
-        setSummary(summary);
-        setImg(img);
-        setPresentation(presentation);
-        setVideo(video);
-        setNumber_of_like(number_of_like);
-    }
+//    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like, ArrayList<String> member_list, ArrayList<String> tech_list){
+//        this.like = like;
+//        member_list = new ArrayList<>();
+//        tech_list = new ArrayList<>();
+//        setPj_name(pj_name);
+//        setUniversity(university);
+//        setMajor(major);
+//        setSummary(summary);
+//        setImg(img);
+//        setPresentation(presentation);
+//        setVideo(video);
+//        setNumber_of_like(number_of_like);
+//    }
 
     public String getPj_name() {
         return pj_name;

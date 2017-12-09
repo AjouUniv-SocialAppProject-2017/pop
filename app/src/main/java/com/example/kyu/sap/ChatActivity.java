@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,7 +26,7 @@ import static com.example.kyu.sap.DetailActivity.chatroom;
  * Created by SAMSUNG on 2017-11-17.
  */
 public class ChatActivity extends AppCompatActivity {
-    private Button btn_send;
+    private ImageView btn_send;
     private EditText et_msg;
     private ListView lv_chating;
     private TextView chatroom_title;
@@ -44,10 +44,10 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.chatroom);
 
         lv_chating = (ListView) findViewById(R.id.lv_chating);
-        btn_send = (Button) findViewById(R.id.btn_send);
+        btn_send = (ImageView) findViewById(R.id.btn_send);
         et_msg = (EditText) findViewById(R.id.et_msg);
         chatroom_title=(TextView)findViewById(R.id.chatroom_title);
-        chatroom_title.setText("| "+chatroom+" |");
+        chatroom_title.setText(chatroom);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         lv_chating.setAdapter(arrayAdapter);
 

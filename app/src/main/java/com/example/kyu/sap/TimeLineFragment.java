@@ -32,16 +32,18 @@ import static com.example.kyu.sap.MainActivity.search;
  * Created by Kyu on 2017-11-07.
  */
 
-public class TimeLineFragment extends Fragment {
+public class TimeLineFragment extends Fragment{
 
     watch watcher;
     Handler mhandler;
-    public static ArrayList<Data> item_list = new ArrayList<>();
+    static ArrayList<Data> item_list = new ArrayList<>();
 
-    public static myAdapter Adapter;
+    //static myAdapter Adapter;
 
     //추가
     public static DatabaseReference DataRef = FirebaseDatabase.getInstance().getReference().child("data");
+
+
 
 
     @Override
@@ -53,26 +55,16 @@ public class TimeLineFragment extends Fragment {
         Log.d("onCreate" , "onCreate");
         Log.d("onCreate" , "onCreate");
 
-        item_list.clear();
-
-
-        item_list.add(new Data("Place Of Passion","아주대학교","미디어학과","졸업작품 정보 제공 서비스", R.drawable.cat1,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/ajouuniversity",true,217));
-        item_list.get(0).addMember("김규서");
-        item_list.get(0).addMember("황선욱");
-        item_list.get(0).addMember("홍길동");
-        item_list.get(0).addTech("#리스트뷰");
-        item_list.get(0).addTech("#뷰페이저");
-        item_list.get(0).addTech("#안드로이드");
-
-        item_list.add(new Data("EyeTracker","아주대학교","미디어학과","스마트 폰의 전면 카메라를 이용한 시선 추적 인터페이스", R.drawable.cat2,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/watch?v=17kA5VkimdE",true,141));
-        item_list.get(1).addMember("박혜린");
-        item_list.get(1).addMember("신동호");
-        item_list.get(1).addMember("김현석");
-        item_list.get(1).addTech("#안드로이드");
-        item_list.get(1).addTech("#카메라");
-        item_list.get(1).addTech("#시선추적모듈");
+        //item_list.clear();
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Log.d("onAttach" , "onAttach");
+        Log.d("onAttach" , "onAttach");
+        Log.d("onAttach" , "onAttach");
+    }
 
     @Override
     public void onStart() {
@@ -80,8 +72,6 @@ public class TimeLineFragment extends Fragment {
         Log.d("onStart" , "onStart");
         Log.d("onStart" , "onStart");
         Log.d("onStart" , "onStart");
-
-
     }
 
     @Override
@@ -90,7 +80,7 @@ public class TimeLineFragment extends Fragment {
         Log.d("onResume" , "onResume");
         Log.d("onResume" , "onResume");
         Log.d("onResume" , "onResume");
-        Adapter.notifyDataSetChanged();
+        //Adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -103,7 +93,7 @@ public class TimeLineFragment extends Fragment {
         Log.d("onCreateView" , "onCreateView");
 
         //final myAdapter
-        Adapter = new myAdapter(view.getContext(), R.layout.item, item_list);
+        final myAdapter Adapter = new myAdapter(view.getContext(), R.layout.item, item_list);
         ListView list = (ListView)view.findViewById(R.id.lst_work);
 
         list.setAdapter(Adapter);
@@ -139,12 +129,16 @@ public class TimeLineFragment extends Fragment {
         return view;
     }
 
+    /////////////////////////////////
+
     public class myAdapter extends BaseAdapter{
+
         Context con;
         LayoutInflater inflater;
         ArrayList<Data> components_list; //
         ArrayList<Data> searched_list; //
         int layout;
+
         myAdapter(Context context, int layout, ArrayList<Data> components_list) {
             con = context;
             this.layout = layout;
@@ -197,6 +191,7 @@ public class TimeLineFragment extends Fragment {
 
             // 이미지 삽입
             ImageView img = (ImageView) convertView.findViewById(R.id.project_img);
+//            ImageView img2 = (ImageView) convertView.findViewById(save_reg_id_num);
             img.setBackground(ContextCompat.getDrawable(convertView.getContext(), data.getImg()));
 
             // 좋아요 버튼 상태
@@ -216,6 +211,7 @@ public class TimeLineFragment extends Fragment {
                     intent.putExtra("like_btn", data.isLike());
                     intent.putExtra("pj_name", data.getPj_name());
                     intent.putExtra("uni_txt", data.getUniversity());
+                    intent.putExtra("date",data.getReg_date());
                     intent.putExtra("major", data.getMajor());
                     intent.putExtra("presentation", data.getPresentation());
                     intent.putExtra("video", data.getVideo());
@@ -355,6 +351,10 @@ public class TimeLineFragment extends Fragment {
             }
         }
 
+        public void addProject(Data data){
+            searched_list.add(data);
+        }
+
         public void filter2(String search) {
             Log.e(this.getClass().getName(),"filter2 start");
             searched_list.clear();
@@ -412,7 +412,6 @@ public class TimeLineFragment extends Fragment {
     }
 
 }
-
 
 
 

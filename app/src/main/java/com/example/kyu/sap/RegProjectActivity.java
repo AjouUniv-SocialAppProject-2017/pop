@@ -37,6 +37,7 @@ public class RegProjectActivity extends AppCompatActivity {
     private static final int PICK_FROM_CAMERA = 1;
     private static final int PICK_FROM_GALLERY = 2;
     public static DataSnapshot ds2;
+    public static int save_reg_id_num;
 
     private ImageView reg_projectImage;
 
@@ -49,7 +50,7 @@ public class RegProjectActivity extends AppCompatActivity {
     private EditText reg_presentation;
     private EditText reg_video;
     private EditText reg_number_of_like;
-
+    private EditText reg_date;
     private EditText reg_member;
     private EditText reg_hash_tag;
 
@@ -105,6 +106,7 @@ public class RegProjectActivity extends AppCompatActivity {
         //사진 생략
         reg_presentation = (EditText)findViewById(R.id.reg_presentation);
         reg_video = (EditText)findViewById(R.id.reg_video);
+        reg_date = (EditText)findViewById(R.id.reg_date);
         //좋아요 생략
         //Number Of Like 생략
 
@@ -116,7 +118,7 @@ public class RegProjectActivity extends AppCompatActivity {
                 reg_presentation.getText().toString(),
                 reg_video.getText().toString(),
                 true,
-                217);
+                217,reg_date.getText().toString());
 
         //Adapter.addProject(data);
 
@@ -150,6 +152,7 @@ public class RegProjectActivity extends AppCompatActivity {
         String imsiPresentation = "";
         String imsiVideo = "";
         int imsiNumberOfLike = 1;
+        String imsiGet_date = "";
 
 
         while (i.hasNext()) {
@@ -165,6 +168,7 @@ public class RegProjectActivity extends AppCompatActivity {
             imsiPresentation = get_data.getPresentation();
             imsiVideo = get_data.getVideo();
             imsiNumberOfLike = get_data.getNumber_of_like();
+            imsiGet_date = get_data.getReg_date();
         }
 
 
@@ -172,14 +176,13 @@ public class RegProjectActivity extends AppCompatActivity {
 
 
 
-        item_list.add(new Data(imsiPjname, imsiUniversity, imsiMajor, imsiSummary, imsiImg, imsiPresentation, imsiVideo, imsiLike, imsiNumberOfLike));
+        item_list.add(new Data(imsiPjname, imsiUniversity, imsiMajor, imsiSummary, imsiImg, imsiPresentation, imsiVideo, imsiLike, imsiNumberOfLike,imsiGet_date));
         item_list.get(3).addMember(reg_member.getText().toString());
         //item_list.get(3).addMember("10번째");
         //item_list.get(3).addMember("10번째");
         item_list.get(3).addTech(reg_hash_tag.getText().toString());
         //item_list.get(3).addTech("#뷰페이저");
         //item_list.get(3).addTech("#안드로이드");
-
 
         Toast.makeText(getApplicationContext(), imsiMajor +", " + item_list.size() + "등록 완료 되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -224,7 +227,9 @@ public class RegProjectActivity extends AppCompatActivity {
                     ImageView image = (ImageView) findViewById(R.id.reg_projectImage);
                     //배치해놓은 ImageView에 set
                     image.setImageBitmap(image_bitmap);
+
                     Toast.makeText(getApplicationContext(), "사진이 등록되었습니다.", Toast.LENGTH_SHORT).show();
+
 
                 } catch (FileNotFoundException e) {
                     // TODO Auto-generated catch block

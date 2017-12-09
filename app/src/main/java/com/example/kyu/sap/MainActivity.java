@@ -13,18 +13,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<Data> item_list = new ArrayList<>();
+
     static public String search = "";
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("main_Resume", "main_Resume");
-        Log.d("main_Resume", "main_Resume");
-        Log.d("main_Resume", "main_Resume");
+        Log.d("main_onResume", "main_onResume");
+        Log.d("main_onResume", "main_onResume");
+        Log.d("main_onResume", "main_onResume");
+
     }
 
     @Override
@@ -32,11 +31,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d("main_onCreate", "main_onCreate");
+        Log.d("main_onCreate", "main_onCreate");
+        Log.d("main_onCreate", "main_onCreate");
+
+
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
         adapter.addFragment(new TimeLineFragment(), null);
         adapter.addFragment(new LikeFragment(), null);
-        adapter.addFragment(new MyFragment(), null);
+        adapter.addFragment(new PopularFragment(), null);
         adapter.addFragment(new ProfileFragment(), null);
 
         viewPager.setAdapter(adapter);
@@ -88,9 +92,14 @@ public class MainActivity extends AppCompatActivity {
                 search = edittext.getText().toString();
             }
         });
+    }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("main_onDestroy" , "main_onDestroy");
+        Log.d("main_onDestroy" , "main_onDestroy");
+        Log.d("main_onDestroy" , "main_onDestroy");
     }
 
     public void mOnClick(View v){
