@@ -19,8 +19,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
-
-import static com.example.kyu.sap.MainActivity.item_list;
+import static com.example.kyu.sap.TimeLineFragment.item_list;
 
 
 public class LikeFragment extends Fragment{

@@ -16,7 +16,7 @@
         android:textSize="15dp"
         android:layout_gravity="center"
         android:textColor="#000000"
-        android:text="규서님의 프로젝트 채팅룸" />
+        android:text="" />
 
 </LinearLayout>
     <ListView

@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -28,8 +29,8 @@ import java.util.Map;
  */
 
 public class DetailActivity extends AppCompatActivity {
-
-
+    public static String chatroom;
+    public static ArrayList<Data> item_list = new ArrayList<>();
     private ImageView btn_comment_send;
     private EditText et_comment;
     private ListView comment_list;
@@ -40,9 +41,9 @@ public class DetailActivity extends AppCompatActivity {
     private String str_msg;
     private String chat_user;
 
-    private DatabaseReference commentRef = FirebaseDatabase.getInstance()
-            .getReference().child("comment");
 
+   private DatabaseReference commentRef= FirebaseDatabase.getInstance()
+            .getReference().child("comment");
 
 
 
@@ -52,7 +53,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.detail);
 
         Intent intent = getIntent();
-
+        commentRef=FirebaseDatabase.getInstance()
+                .getReference().child("comment").child(intent.getExtras().getString("pj_name"));
         ImageView project_img = (ImageView)findViewById(R.id.project_img);
         project_img.setBackground(ContextCompat.getDrawable(getApplicationContext(),intent.getExtras().getInt("project_img")));
 
@@ -66,8 +68,12 @@ public class DetailActivity extends AppCompatActivity {
         }
         TextView pj_name = (TextView)findViewById(R.id.pj_name);
         pj_name.setText(intent.getExtras().getString("pj_name"));
+        chatroom=intent.getExtras().getString("pj_name");
+
+
         TextView team_name = (TextView)findViewById(R.id.team);
         team_name.setText("팀 - " + intent.getExtras().getString("pj_name"));
+
 
         TextView uni = (TextView)findViewById(R.id.uni_txt);
         uni.setText(intent.getExtras().getString("uni_txt"));
