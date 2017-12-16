@@ -9,11 +9,19 @@ import android.text.method.LinkMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * Created by Kyu on 2017-11-07.
  */
 
 public class DetailActivity extends AppCompatActivity {
+
+    private DatabaseReference commentRef= FirebaseDatabase.getInstance()
+            .getReference().child("comment");
+
+    public static String chatroom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +29,13 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.detail);
 
         Intent intent = getIntent();
+        chatroom=intent.getExtras().getString("pj_name");
+        commentRef=FirebaseDatabase.getInstance().getReference().child("comment").child(intent.getExtras().getString("pj_name"));
+
 
         ImageView project_img = (ImageView)findViewById(R.id.project_img);
         project_img.setBackground(ContextCompat.getDrawable(getApplicationContext(),intent.getExtras().getInt("project_img")));
+
 
         ImageView like_btn = (ImageView)findViewById(R.id.like_btn);
         boolean like = intent.getExtras().getBoolean("like_btn");
