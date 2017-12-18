@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import static com.example.kyu.sap.DetailActivity.chatroom;
+import static com.example.kyu.sap.LoginActivity.current_user_name;
 
 /**
  * Created by SAMSUNG on 2017-11-17.
@@ -70,7 +71,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 Map<String, Object> objectMap = new HashMap<String, Object>();
 
-                objectMap.put("str_name", str_name);
+                objectMap.put("str_name", current_user_name);
                 objectMap.put("text", et_msg.getText().toString());
 
                 dbRef.updateChildren(objectMap);
