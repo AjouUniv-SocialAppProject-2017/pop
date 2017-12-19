@@ -19,28 +19,36 @@ public class Data {
     private String major;
     private ArrayList<String> member_list;
     private String summary;
-
-    public String getReg_date() {
-        return reg_date;
-    }
-
-    public void setReg_date(String reg_date) {
-        this.reg_date = reg_date;
-    }
-
-    private String reg_date;
     private ArrayList<String> tech_list;
     private boolean like = false;
     private int img;
+
+    private int face_img;
     private String presentation;
     private String video;
     private int number_of_like;
 
-    Data(){
 
+    Data(){
+        like = false;
+        member_list = new ArrayList<>();
+        tech_list = new ArrayList<>();
     }
 
-    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like,String reg_date){
+    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video){
+        like = false;
+        member_list = new ArrayList<>();
+        tech_list = new ArrayList<>();
+        setPj_name(pj_name);
+        setUniversity(university);
+        setMajor(major);
+        setSummary(summary);
+        setImg(img);
+        setPresentation(presentation);
+        setVideo(video);
+    }
+
+    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like){
         this.like = like;
         member_list = new ArrayList<>();
         tech_list = new ArrayList<>();
@@ -51,23 +59,22 @@ public class Data {
         setImg(img);
         setPresentation(presentation);
         setVideo(video);
-        setNumber_of_like(number_of_like);
-        setReg_date(reg_date);
     }
 
-//    Data(String pj_name,String university,String major,String summary,int img,String presentation,String video,boolean like,int number_of_like, ArrayList<String> member_list, ArrayList<String> tech_list){
-//        this.like = like;
-//        member_list = new ArrayList<>();
-//        tech_list = new ArrayList<>();
-//        setPj_name(pj_name);
-//        setUniversity(university);
-//        setMajor(major);
-//        setSummary(summary);
-//        setImg(img);
-//        setPresentation(presentation);
-//        setVideo(video);
-//        setNumber_of_like(number_of_like);
-//    }
+    Data(String pj_name,String university,String major,String summary,int img, int face_img, String presentation,String video,boolean like,int number_of_like){
+        this.like = like;
+        member_list = new ArrayList<>();
+        tech_list = new ArrayList<>();
+        setPj_name(pj_name);
+        setUniversity(university);
+        setMajor(major);
+        setSummary(summary);
+        setImg(img);
+        setFace_img(face_img);
+        setPresentation(presentation);
+        setVideo(video);
+        setNumber_of_like(number_of_like);
+    }
 
     public String getPj_name() {
         return pj_name;
@@ -136,6 +143,14 @@ public class Data {
         this.img = img;
     }
 
+    public int getFace_img() {
+        return face_img;
+    }
+
+    public void setFace_img(int face_img) {
+        this.face_img = face_img;
+    }
+
     public String getPresentation() {
         return presentation;
     }
@@ -171,11 +186,11 @@ public class Data {
         result.put("tech_list",tech_list);
         result.put("like",like);
         result.put("img",img);
+        result.put("face_img",face_img);
         result.put("presentation",presentation);
         result.put("video",video);
         result.put("number_of_like",number_of_like);
 
         return result;
     }
-
 }

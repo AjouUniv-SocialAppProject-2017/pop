@@ -13,7 +13,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,12 +23,32 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
+import static android.R.id.edit;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.kyu.sap.JoinActivity.UserRef;
+import static com.example.kyu.sap.JoinActivity.ds;
 import static com.example.kyu.sap.MainActivity.search;
+import static com.example.kyu.sap.R.id.editText;
+import static com.example.kyu.sap.R.id.et_join_email;
+import static com.example.kyu.sap.R.id.et_join_id;
+import static com.example.kyu.sap.R.id.et_join_major;
+import static com.example.kyu.sap.R.id.et_join_name;
+import static com.example.kyu.sap.R.id.et_join_phone_num;
+import static com.example.kyu.sap.R.id.et_join_pw;
+import static com.example.kyu.sap.R.id.pj_name;
+import static com.example.kyu.sap.R.id.uni_txt;
+import static com.example.kyu.sap.RegProjectActivity.ds2;
 
 /**
  * Created by Kyu on 2017-11-07.
@@ -191,7 +213,6 @@ public class TimeLineFragment extends Fragment{
 
             // 이미지 삽입
             ImageView img = (ImageView) convertView.findViewById(R.id.project_img);
-//            ImageView img2 = (ImageView) convertView.findViewById(save_reg_id_num);
             img.setBackground(ContextCompat.getDrawable(convertView.getContext(), data.getImg()));
 
             // 좋아요 버튼 상태
@@ -208,10 +229,10 @@ public class TimeLineFragment extends Fragment{
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
                     intent.putExtra("project_img", data.getImg());
+                    intent.putExtra("face_img", data.getFace_img());
                     intent.putExtra("like_btn", data.isLike());
                     intent.putExtra("pj_name", data.getPj_name());
                     intent.putExtra("uni_txt", data.getUniversity());
-                    intent.putExtra("date",data.getReg_date());
                     intent.putExtra("major", data.getMajor());
                     intent.putExtra("presentation", data.getPresentation());
                     intent.putExtra("video", data.getVideo());
@@ -412,6 +433,7 @@ public class TimeLineFragment extends Fragment{
     }
 
 }
+
 
 
 

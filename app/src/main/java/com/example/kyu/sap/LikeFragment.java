@@ -18,9 +18,12 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-import static com.example.kyu.sap.TimeLineFragment.item_list;
+import com.example.kyu.sap.R;
 
+import java.util.ArrayList;
+
+import static com.example.kyu.sap.TimeLineFragment.item_list;
+import static com.example.kyu.sap.TimeLineFragment.item_list;
 
 public class LikeFragment extends Fragment{
     Handler mhandler;
@@ -31,7 +34,7 @@ public class LikeFragment extends Fragment{
 
 
 
-        final myAdapter Adapter = new myAdapter(view.getContext(), R.layout.image_item, item_list);
+        final LikeFragment.myAdapter Adapter = new LikeFragment.myAdapter(view.getContext(), R.layout.image_item, item_list);
         GridView list = (GridView) view.findViewById(R.id.Grid_image);
 
         list.setAdapter(Adapter);
@@ -46,11 +49,8 @@ public class LikeFragment extends Fragment{
                 }
             }
         };
-
-
         return view;
     }
-
 
     public class myAdapter extends BaseAdapter {
         Context con;
@@ -122,8 +122,9 @@ public class LikeFragment extends Fragment{
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), DetailActivity.class);
+                    Intent intent = new Intent(getActivity(), com.example.kyu.sap.DetailActivity.class);
                     intent.putExtra("project_img", data.getImg());
+                    intent.putExtra("face_img", data.getFace_img());
                     intent.putExtra("like_btn", data.isLike());
                     intent.putExtra("pj_name", data.getPj_name());
                     intent.putExtra("uni_txt", data.getUniversity());

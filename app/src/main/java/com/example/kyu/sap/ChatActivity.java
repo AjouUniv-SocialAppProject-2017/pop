@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import static com.example.kyu.sap.DetailActivity.chatroom;
+import static com.example.kyu.sap.LoginActivity.current_user_name;
 
 /**
  * Created by SAMSUNG on 2017-11-17.
@@ -70,7 +71,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 Map<String, Object> objectMap = new HashMap<String, Object>();
 
-                objectMap.put("str_name", str_name);
+                objectMap.put("str_name", current_user_name);
                 objectMap.put("text", et_msg.getText().toString());
 
                 dbRef.updateChildren(objectMap);
@@ -78,6 +79,53 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+
+
+        /*
+
+         inputName = (EditText) findViewById(R.id.name);
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReferenceFromUrl("gs://chat-a4316.appspot.com/");
+
+        //레퍼런스부분
+        StorageReference pathReference = storageReference.child("4.jpg");
+
+        //Url
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Toast.makeText(getApplicationContext(), "다운로드 성공 : "+ uri, Toast.LENGTH_SHORT).show();
+                inputName.setText(uri.toString());
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "다운로드 실패", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        로컬 영역에 저장
+        try {
+            final File localFile = File.createTempFile("images", "jpg" );
+            pathReference.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(getApplicationContext(), "파일 저장 성공", Toast.LENGTH_SHORT).show();
+                    inputName.setText(localFile.getPath());
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), "파일 저장 실패", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (IOException e) { Toast.makeText(getApplicationContext(), "예외가 발생했다 씨!!!!", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+         */
 
         /*
         addChildEventListener는 Child에서 일어나는 변화를 감지

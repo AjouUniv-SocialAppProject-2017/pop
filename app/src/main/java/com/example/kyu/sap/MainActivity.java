@@ -2,16 +2,20 @@ package com.example.kyu.sap;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.kyu.sap.TimeLineFragment.item_list;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -113,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
         }
+    }
+
+    public void asdf(){
+
     }
 }
 

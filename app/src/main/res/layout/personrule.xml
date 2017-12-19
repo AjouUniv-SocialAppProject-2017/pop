@@ -58,7 +58,7 @@
                     android:layout_marginTop="1dp"
                     android:background="@drawable/img_infobg"
                     android:gravity="center_vertical"
-                    android:text="@string/join_personal_message"
+                    android:text="@string/personrule"
                     android:textColor="#7b828b"
                     android:textSize="10sp" />
 

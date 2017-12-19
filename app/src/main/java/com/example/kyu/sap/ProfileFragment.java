@@ -18,6 +18,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.example.kyu.sap.LoginActivity.current_user_major;
+import static com.example.kyu.sap.LoginActivity.current_user_name;
+import static com.example.kyu.sap.R.id.start;
+import static com.example.kyu.sap.R.id.user_id;
+
 /**
  * Created by Kyu on 2017-11-08.
  */
@@ -38,6 +44,17 @@ public class ProfileFragment extends Fragment {
     final int REQ_CODE_SELECT_IMAGE=100;
 
 
+    private TextView tv_user_id;
+    private TextView tv_user_major;
+
+    String user_name = current_user_name;
+    String user_major = current_user_major;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
@@ -45,20 +62,21 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile, null);
 
+        tv_user_id = (TextView)view.findViewById(user_id);
+        tv_user_major = (TextView)view.findViewById(R.id.user_major);
+
+        tv_user_id.setText(user_name);
+        tv_user_major.setText(user_major);
+
         View.OnClickListener detail = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                ArrayList<Data> item_list = new ArrayList<>();
-                item_list.add(new Data("PoP","아주대학교","미디어학과","졸업작품 정보 제공 서비스",R.drawable.logo7,"https://drive.google.com/open?id=0B8gBCAmXbA4VQWZjOUxfZlMwaDQ","https://www.youtube.com/user/inhauniversity",true,217,"2017년 11월"));
-                item_list.get(0).addMember("김규서");
-                item_list.get(0).addMember("황선욱");
-                item_list.get(0).addMember("홍길동");
-                item_list.get(0).addTech("#리스트뷰");
-                item_list.get(0).addTech("#뷰페이저");
-                item_list.get(0).addTech("#안드로이드");
-                final Data data = item_list.get(0);
+
+
+                final Data data = TimeLineFragment.item_list.get(TimeLineFragment.item_list.size()-1);
                 intent.putExtra("project_img", data.getImg());
+                intent.putExtra("face_img", data.getFace_img());
                 intent.putExtra("like_btn", data.isLike());
                 intent.putExtra("pj_name", data.getPj_name());
                 intent.putExtra("uni_txt", data.getUniversity());
@@ -75,7 +93,7 @@ public class ProfileFragment extends Fragment {
 
         ImageView imag = (ImageView) view.findViewById(R.id.profile_imageview);
 
-        Bitmap bm1 = BitmapFactory.decodeResource(getResources(), R.drawable.profileimage);
+        Bitmap bm1 = BitmapFactory.decodeResource(getResources(), R.drawable.face);
         Bitmap bm2 = getRoundedCornerBitmap(bm1);
         imag.setImageBitmap(bm2);
 
@@ -84,9 +102,9 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
 
-                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
 
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
 
@@ -102,13 +120,17 @@ public class ProfileFragment extends Fragment {
         txtv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
 
-                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
 
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivity(intent);
+//                Intent intent = new Intent(Intent.ACTION_PICK);
+//
+//                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+//
+//                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
+//                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
             }
         });
 
@@ -119,9 +141,9 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
-
-                ProfileFragment.this.startActivity(intent);
-
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                getActivity().finish();
                 //수정
                 Toast.makeText(getActivity(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
             }

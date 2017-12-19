@@ -20,26 +20,26 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/loginpw"
-        android:layout_marginBottom="112dp"
-        android:layout_marginStart="13dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
         android:onClick="mOnClick"
-        android:text="로그인" />
+        android:text="로그인"
+        android:src="@drawable/login2"
+        android:layout_below="@+id/loginpw"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="50dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/join_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
         android:text="회원가입"
-        android:layout_alignBaseline="@+id/login_button"
-        android:layout_alignBottom="@+id/login_button"
         android:onClick="mOnClick"
-        android:layout_alignEnd="@+id/loginpw" />
+        android:src="@drawable/login5"
+        android:layout_below="@+id/login_button"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/loginid"
@@ -52,7 +52,7 @@
         android:textCursorDrawable="@null"
         android:textColor="#ffffff"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/join_button" />
+        android:layout_alignStart="@+id/loginpw" />
 
     <EditText
         android:id="@+id/loginpw"
