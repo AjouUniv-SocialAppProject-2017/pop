@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_brick"
+    tools:context="com.example.kyu.sap.SplashActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/secondrank"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="50dp"
+            app:srcCompat="@drawable/second_rank"
+            android:layout_marginEnd="49dp"
+            android:layout_below="@+id/first_project"
+            android:layout_toStartOf="@+id/first_project" />
+
+        <ImageView
+            android:id="@+id/firstrank"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="38dp"
+            app:srcCompat="@drawable/first_rank"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/thirdrank"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            app:srcCompat="@drawable/third_rank"
+            android:layout_marginStart="48dp"
+            android:layout_alignTop="@+id/secondrank"
+            android:layout_toEndOf="@+id/first_project" />
+
+        <!-- app:srcCompat="@drawable/cat3"-->
+        <ImageView
+            android:id="@+id/first_project"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_below="@+id/firstrank"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/second_project"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/cat1"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/third_project"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/cat2"
+        android:layout_marginStart="15dp"
+        android:layout_alignTop="@+id/second_project"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="돌담"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="RETRO"
+        android:layout_marginEnd="66dp"
+        android:layout_below="@+id/second_project"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eye Tracker"
+        android:layout_marginStart="44dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이 페이지는 랭크페이지입니다.\n가장 많은 좋아요를 받은 작품이 나타납니다."
+        android:layout_below="@+id/textView4"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp" />
+
+</RelativeLayout>
